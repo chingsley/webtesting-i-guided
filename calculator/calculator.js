@@ -1,7 +1,9 @@
 module.exports = {
-  add,
+  add
 };
 
-function add() {
-  return null;
+function add(x) {
+  // console.log(arguments);
+  const args = Array.isArray(x) ? x : Array.from(arguments);
+  return args.reduce((total, num) => total + num, 0);
 }
